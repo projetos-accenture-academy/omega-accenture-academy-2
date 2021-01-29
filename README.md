@@ -8,13 +8,13 @@
 
 Tecnologias utilizadas:
 
-- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
-- [BOOTSTRAP](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+-   [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+-   [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
+-   [BOOTSTRAP](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ### 🔗 Acesse em
 
-- <a href="https://omega-accenture-academy-2.netlify.app/" target="_blank">Ômega Bank</a>
+-   <a href="https://omega-accenture-academy-2.netlify.app/" target="_blank">Ômega Bank</a>
 
 ### 🧑‍🤝‍🧑 Autores
 
@@ -27,4 +27,4 @@ Tecnologias utilizadas:
 \
 \
 \
-<a href="https://app.netlify.com/sites/omega-accenture-academy-2/deploys" target="_blank">![Netlify Status](https://api.netlify.com/api/v1/badges/2ab9b981-d974-424e-9fb0-d5e5f2d24a83/deploy-status)</a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4a2d3ae7-6d8d-48d0-975d-5785f5077f28/deploy-status)](https://app.netlify.com/sites/omega-accenture-academy-2/deploys)
