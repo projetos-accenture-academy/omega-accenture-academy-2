@@ -1,6 +1,6 @@
 const viewContas = null || document.getElementById('view-contas')
 
-const usuarioDados = `{
+/*const usuarioDados = `{
   "usuario": {
     "id": 8,
     "nome": "Usuário teste",
@@ -9,7 +9,7 @@ const usuarioDados = `{
   "token": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvdGVzdGUiLCJpZFVzdWFyaW8iOjgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MTIwMTg5MjUsImV4cCI6MTYxMjAyMjUyNX0.64tdLN187ik15MKe1Q4LIoqpZr1X0M8w9kUdf5WHIgje28VmFA82JgyBS57BBjbeLekwtIk3dQ_pmjs-fZof9A"
 }`
 
-localStorage.setItem(userDataCollection, usuarioDados)
+localStorage.setItem(userDataCollection, usuarioDados)*/
 
 /**
  * Realiza a chamada da api de lanãmentos e salva no localstorage
@@ -29,7 +29,11 @@ const setDashboardData = async () => {
             res =>  {
                 localStorage.setItem('@userAccountsStatements', JSON.stringify(res.data))
             })
-        .catch(err => console.log('err', err))
+        .catch(err => {
+            document.getElementById('view-contas').innerHTML = `
+                <di class="error-dash">Não foi possível obter os dados do dashboard, por favor tente novamente.</div>
+            `
+        })
 }
 
 
@@ -74,7 +78,7 @@ const viewAccountItem = (conta, label) => {
                                         <div class="col-1 justify-content-center d-flex d-none d-md-block">
                                             <div><span class="badge bg-${info.tipo == 'R' ? 'success' : 'danger'}">${info.tipo}</span></div>
                                         </div>
-                                        <div class="col-3 text-end valor-tipo-${info.valor}">${info.valor}</div>
+                                        <div class="col-3 text-end valor-tipo-${info.valor}">${info.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
                                     </div>
                                 `
                             }).join('') 
