@@ -1,5 +1,9 @@
 const viewContas = null || document.getElementById('view-contas')
 
+/**
+ * Para testar sem o login, descomentar o bloco abaixo
+ * Talvez seja necessário trocar o token por um atualizado
+ */
 /*const usuarioDados = `{
   "usuario": {
     "id": 8,
@@ -11,13 +15,19 @@ const viewContas = null || document.getElementById('view-contas')
 
 localStorage.setItem(userDataCollection, usuarioDados)*/
 
+
 /**
  * Realiza a chamada da api de lanãmentos e salva no localstorage
+ * Exibe um erro se não conseguir acessar a API 
  */
 const setDashboardData = async () => {
+    
     const userData = JSON.parse(localStorage.getItem(userDataCollection));
     const {usuario, token} = await userData;
+    let error = false;
 
+   // document.getElementById('view-contas').innerHTML = loadingElement;
+    
     await axios
         .get(`${baseURL}dashboard?fim=2021-01-31&inicio=2021-01-01&login=${usuario.login}`,  {
             headers: {
@@ -27,13 +37,15 @@ const setDashboardData = async () => {
         })
         .then(
             res =>  {
-                localStorage.setItem('@userAccountsStatements', JSON.stringify(res.data))
+                localStorage.setItem(userAccountStatements, JSON.stringify(res.data))
             })
         .catch(err => {
-            document.getElementById('view-contas').innerHTML = `
-                <di class="error-dash">Não foi possível obter os dados do dashboard, por favor tente novamente.</div>
-            `
+            console.log('Erro ao atualizar os dados locais vindos do servidor')
+            error = true;
+            localStorage.removeItem(userAccountStatements)
         })
+
+    return error;
 }
 
 
@@ -92,9 +104,19 @@ const viewAccountItem = (conta, label) => {
     `
 }
 
-setDashboardData()
+const init = async () => {
+    viewContas.innerHTML = loadingElement;
 
-const accounts = JSON.parse(localStorage.getItem('@userAccountsStatements'))
-const {contaBanco: contaBancoDash, contaCredito: contaCreditoDash} = accounts
+    const error = await setDashboardData()
 
-viewContas.innerHTML =  viewAccountItem(contaBancoDash, 'Conta Banco') + viewAccountItem(contaCreditoDash, 'Conta Corrent')
+    if(!error){
+        const accounts = JSON.parse(localStorage.getItem(userAccountStatements))
+        const {contaBanco: contaBancoDash, contaCredito: contaCreditoDash} = accounts
+
+        viewContas.innerHTML =  viewAccountItem(contaBancoDash, 'Conta Banco') + viewAccountItem(contaCreditoDash, 'Conta Corrent')
+    } else {
+        viewContas.innerHTML =  `<di class="error-dash">Não foi possível obter os dados do dashboard, por favor tente novamente.</div>`;
+    }
+}
+
+init()

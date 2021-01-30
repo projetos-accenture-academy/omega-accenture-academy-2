@@ -15,3 +15,9 @@ const userAccountPlans     = "@userAccountPlans";
 const userAccountStatements = "@userAccountStatements";
 
 const baseURL = 'https://accenture-java-desafio.herokuapp.com/'
+
+const loadingElement = `
+    <div class="container d-flex justify-content-center p-3">
+                <div class="loading"><div></div><div></div></div>
+    </div>
+`
