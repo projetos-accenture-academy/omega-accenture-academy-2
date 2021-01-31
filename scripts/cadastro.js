@@ -1,19 +1,32 @@
-const valUsername = document.getElementById('username').value;
-const valNome = document.getElementById('nome').value;
-const valCpf = document.getElementById('cpf').value;
-const valEmail = document.getElementById('email').value;
-const valSenha = document.getElementById('senha').value;
-const valSenha1 = document.getElementById('senha1').value;
 
 
 
 
 
-async function cadastrar() {
+
+function cadastrar() {
+
+document.getElementById('resultado').innerHTML="";
+
+const dadosEnviados = {
+
+     valUsername: document.getElementById('username').value,
+     valNome: document.getElementById('nome').value,
+     valCpf: document.getElementById('cpf').value,
+     valEmail: document.getElementById('email').value,
+     valSenha: document.getElementById('senha').value,
+     valSenha1: document.getElementById('senha1').value,
 
 
-document.getElementById('cadastrar').addEventListener('click',()=>{
- console.log("oi, eu sou a funcao cadastrar")
+
+}
+    
+if(dadosEnviados.valSenha1!=dadosEnviados.valSenha){
+    document.getElementById('resultado').innerHTML='<p class="lead text-center">Os dois campos de senhas <b>devem conter o mesmo conteúdo</b>.</p>'
+}
+if(dadosEnviados.valNome=='' && dadosEnviados.valCpf=='' && dadosEnviados.valEmail=='' && dadosEnviados.valSenha==''){
+    document.getElementById('resultado').innerHTML="<p class='lead text-center'>Todos os campos precisam estar preenchidos</p>";
+}
  
  /*
  
@@ -39,12 +52,13 @@ document.getElementById('cadastrar').addEventListener('click',()=>{
 
     }
 
-    */
-})
+   */ 
 
 
 
  
 }
+
+
 
 
