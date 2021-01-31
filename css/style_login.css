@@ -52,12 +52,22 @@ p
   margin: 0 auto;  
 }
 
+#login-error-warning
+{
+  color: red;
+}
+
+
 /*------------ Classes ------------*/
 
 .btn-container {
   padding-top: 12px;
   text-align: center;
 }     
+.btn-container
+{
+  min-width: 50px;
+}
 
 .login-text {
   font-family: 'Cinzel', serif;
