@@ -1,4 +1,4 @@
-import baseURL from './constantes';
+const baseURL = 'https://accenture-java-desafio.herokuapp.com/';
 
 
 function TestaCPF(strCPF) {
