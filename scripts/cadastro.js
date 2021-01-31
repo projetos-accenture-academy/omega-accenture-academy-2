@@ -54,40 +54,42 @@ else if(!TestaCPF(dadosEnviados.valCpf)){
     document.getElementById('resultado').innerHTML="<p class='lead text-center'>Necessário um CPF válido</p>";
 }
  
- 
- 
+else{
+
  try {
        
-        const response = await axios.post(`${baseURL}usuarios`,{
+    const response = await axios.post(`${baseURL}usuarios`,{
 
-         'nome':dadosEnviados.valNome,
-         'cpf':dadosEnviados.valCpf,
-         'usuario':dadosEnviados.valUsername,
-         'senha':dadosEnviados.valSenha
+     'nome':dadosEnviados.valNome,
+     'cpf':dadosEnviados.valCpf,
+     'usuario':dadosEnviados.valUsername,
+     'senha':dadosEnviados.valSenha
 
-       /* username:valUsername,
-            name:valNome,
-            cpf:valCpf,
-            senha:valSenha,
-           email:valEmail*/
-        }, {
-            headers: {
-            'Content-Type': application/json
-          }
-        });
-    
-        return await response.json();
-      } catch (error) {
-        console.error(error);
-      } finally {
-       document.getElementById('cadForm').innerHTML="";
-       document.getElementById('cadForm').innerHTML="<p class='lead text-center justify-content'>Cadastro realizado com sucesso. <a href='login.html'>Clique para ir para tela de login</a> </p>";
+   /* username:valUsername,
+        name:valNome,
+        cpf:valCpf,
+        senha:valSenha,
+       email:valEmail*/
+    }, {
+        headers: {
+        'Content-Type': application/json
+      }
+    });
 
-    }
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+  } finally {
+   document.getElementById('cadForm').innerHTML="";
+   document.getElementById('cadForm').innerHTML="<p class='lead text-center justify-content'>Cadastro realizado com sucesso. <a href='login.html'>Clique para ir para tela de login</a> </p>";
 
-   
+}
 
 
+
+
+}
+ 
 
  
 }
