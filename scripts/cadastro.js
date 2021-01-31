@@ -1,5 +1,3 @@
-import baseURL from './constantes';
-
 const valUsername = document.getElementById('username').value;
 const valNome = document.getElementById('nome').value;
 const valCpf = document.getElementById('cpf').value;
@@ -15,8 +13,11 @@ async function cadastrar() {
 
 
 document.getElementById('cadastrar').addEventListener('click',()=>{
+ console.log("oi, eu sou a funcao cadastrar")
  
-    try {
+ /*
+ 
+ try {
         console.log("passei por aqui");
         const response = await axios.post(`${baseURL}usuarios`,{
             username:valUsername,
@@ -25,9 +26,7 @@ document.getElementById('cadastrar').addEventListener('click',()=>{
             senha:valSenha,
             email:valEmail
         }, {
-          method: POST,
-          mode: cors,
-          headers: {
+            headers: {
             'Content-Type': application/json
           }
         });
@@ -37,8 +36,13 @@ document.getElementById('cadastrar').addEventListener('click',()=>{
         console.error(error);
       } finally {
        console.log(nome)
-      }
+
+    }
+
+    */
 })
+
+
 
  
 }
