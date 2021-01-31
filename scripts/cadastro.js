@@ -12,7 +12,7 @@ const valSenha1 = document.getElementById('senha1').value;
 
 
 async function cadastrar() {
-evemt.preventDefault();
+
 
 document.getElementById('cadastrar').addEventListener('click',()=>{
  
