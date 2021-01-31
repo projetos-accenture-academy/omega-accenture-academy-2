@@ -23,9 +23,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/*------------ ID'S ------------*/
+p
+{
+    font-weight: 400;
+}
 
-#btn-submit {
+
+/*------------ IDs ------------*/
+
+#btn-login {
   background-color:#003586; 
   border:#003586; 
   border-radius: 8px;
@@ -35,7 +41,7 @@ html {
   width: 18%;  
 }
 
-#btn-submit:hover {
+#btn-login:hover {
   opacity:1;
 } 
 
@@ -46,7 +52,7 @@ html {
   margin: 0 auto;  
 }
 
-/*------------ Class ------------*/
+/*------------ Classes ------------*/
 
 .btn-container {
   padding-top: 12px;
@@ -57,4 +63,21 @@ html {
   font-family: 'Cinzel', serif;
   font-size: 28px;
   margin: 0;
+}
+
+
+.strong-p
+{
+  font-weight: 500;
+}
+
+.card
+{
+  border-radius: 30px;
+}
+
+
+/*-------- Sobreescrevendo Bootstrap --------*/
+.nav-item {
+  font-size: 1.1em !important;
 }
