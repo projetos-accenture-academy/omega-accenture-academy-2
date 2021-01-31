@@ -1,12 +1,5 @@
 
 
-//sends user to designated route
-const RedirectUser= (route = '#/') =>
-{
-    console.log(`Redirecting user to ${route}...`);
-    window.location.replace(route); 
-}
-
 //Gets user's info and tries to log them in
 const UserLogin = async () => 
 {
@@ -41,7 +34,7 @@ const UserLogin = async () =>
                     //Save user data in local browser variable for further use
                     localStorage.setItem(userDataCollection, JSON.stringify(res.data)); 
 
-                    RedirectUser('#/dashboard');
+                    window.location='/dashboard.html';
 
                 }
             }
