@@ -17,7 +17,7 @@ localStorage.setItem(userDataCollection, usuarioDados)*/
 
 
 /**
- * Realiza a chamada da api de lanãmentos e salva no localstorage
+ * Realiza a chamada da api de lançamentos e salva no localstorage
  * Exibe um erro se não conseguir acessar a API 
  */
 const setDashboardData = async () => {
