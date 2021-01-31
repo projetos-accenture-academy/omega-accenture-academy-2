@@ -62,7 +62,7 @@ else{
 
      'nome':dadosEnviados.valNome,
      'cpf':dadosEnviados.valCpf,
-     'usuario':dadosEnviados.valUsername,
+     'login':dadosEnviados.valUsername,
      'senha':dadosEnviados.valSenha
 
    /* username:valUsername,
