@@ -14,13 +14,7 @@ Tecnologias utilizadas:
 
 ### 🛠 Como executar localmente
 
--   Baixe ou clone o repositório
--   Abra o diretório raiz do repositório com o terminal, e execute:
-
-``` 
-    npm i
-    npm start
-```
+-   Basta abrir os arquivos .html no navegador como páginas normais
 
 ### 🔗 Acesse em
 
