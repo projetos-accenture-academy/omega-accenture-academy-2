@@ -91,11 +91,11 @@ Transferir <i class="ms-3 far fa-share-square"></i>
         </div>
     </div>
 </div>
-</div> `);
+</div>`);
 
 const fazerTransferencia = async () => {
     
-document.getElementById('modal-transacoes').innerHTML="";
+document.getElementById('modal-transacoes').innerHTML=modalTransacoes();
 
     document.getElementById('btn-save').addEventListener('click', function () {
         let conta = document.getElementById('inputConta').value,
@@ -125,15 +125,12 @@ document.getElementById('modal-transacoes').innerHTML="";
         }).then(
             res => {
                 if (res.status === 200) {
-                    window.location.reload()
+                    window.location.replace('#/dashboard'); 
                 }
             }
         ).catch(err => {
             console.log(err)
-            alert('Oops, algo deu errado')
+            alert(err.response.data.error);
         })
     });
 }
-
-fazerTransferencia()
-
