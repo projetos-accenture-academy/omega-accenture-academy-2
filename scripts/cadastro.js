@@ -43,7 +43,7 @@ const dadosEnviados = {
 
 
 }
-    
+
 if(dadosEnviados.valSenha1!=dadosEnviados.valSenha){
     document.getElementById('resultado').innerHTML='<p class="lead text-center">Os dois campos de senhas <b>devem conter o mesmo conteúdo</b>.</p>'
 }
@@ -53,11 +53,11 @@ else if(dadosEnviados.valNome=='' && dadosEnviados.valCpf=='' && dadosEnviados.v
 else if(!TestaCPF(dadosEnviados.valCpf)){
     document.getElementById('resultado').innerHTML="<p class='lead text-center'>Necessário um CPF válido</p>";
 }
- 
+
 else{
 
  try {
-       
+
     const response = await axios.post(`${baseURL}usuarios`,{
 
      'nome':dadosEnviados.valNome,
@@ -89,11 +89,7 @@ else{
 
 
 }
- 
 
- 
+
+
 }
-
-
-
-

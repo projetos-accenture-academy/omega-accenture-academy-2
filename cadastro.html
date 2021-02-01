@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <title>Cadastro</title>
-  
+    <link rel="stylesheet" href="./css/style_home.css">
   </head>
   <style>
       .form-group{
@@ -43,13 +43,34 @@
     </script>
   <body>
    
-    <header class="align-items-center bg-white border-bottom shadow-sm ">        
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid" width="100%">
-          <a id="logo" class="navbar-brand" href="index.html">Ωmega Bank</a>          
-        </div>
+     <!--Header component-->
+     <div id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 mb-4">
+          <div class="container d-flex justify-content-between">
+              <a class="navbar-brand logo m-0" id="logo" href="#">
+                  Ωmega Bank
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav ">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="login.html">Logar</a>
+                      </li>
+                     
+
+                  </ul>
+              </div>
+          </div>
       </nav>
-    </header>
+  </div>
+
+
 
     <div id="resultado"></div>
 
