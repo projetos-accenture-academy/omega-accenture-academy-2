@@ -4,7 +4,7 @@ const viewContas = null || document.getElementById('view-contas')
  * Para testar sem o login, descomentar o bloco abaixo
  * Talvez seja necessário trocar o token por um atualizado
  */
-const usuarioDados = `{
+/*const usuarioDados = `{
   "usuario": {
     "id": 8,
     "nome": "Usuário teste",
@@ -13,7 +13,7 @@ const usuarioDados = `{
   "token": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvdGVzdGUiLCJpZFVzdWFyaW8iOjgsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MTIxNDM1NzgsImV4cCI6MTYxMjE0NzE3OH0.nY7hz8ivJVP7wHwv0BPUDTzdD8tAulgHuTdyaqcvDLqbESUrH56RjdfXvxMB_lyt9kDry-I2K54VYS5EQHF0-w"
 }`
 
-localStorage.setItem(userDataCollection, usuarioDados)
+localStorage.setItem(userDataCollection, usuarioDados)*/
 
 
 /**
@@ -27,7 +27,7 @@ const setDashboardData = async (initialDate = '', finalDate = '') => {
     let error = false;
     const now = new Date();
     const thisMonth = `${now.getFullYear()}-${(now.getMonth() <= 9 ? '0' + (now.getMonth()+1) : now.getMonth()+1)}`;
-    const lastDay = new Date(now.getFullYear(), now.getMonth(), 0).getDate()
+    const lastDay = new Date(now.getFullYear(), thisMonth.substr(5,7), 0).getDate()
     
     const ini = initialDate ? initialDate : `${thisMonth}-01`;
     const final = finalDate ? finalDate : `${thisMonth}-${lastDay}`;
