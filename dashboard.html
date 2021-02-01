@@ -33,7 +33,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Olá, João
+                                Olá, <span id="user-logged"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Dados pessoais</a></li>
@@ -78,26 +78,11 @@
                 </div>
                 <div class="modal-body row">
                     <div class="container flex-column p-3">
-                        <label for="description" class="form-label">Descrição</label>
-                        <div class="input-group mb-3 ">
-                            <input type="text" class="form-control" id="description"
-                                placeholder="(Parte ou nome da descrição)">
-                        </div>
                         <label for="birthday">Período de lançamentos:</label>
                         <div class="input-group mb-3 ">
                             <input type="date" class="form-control" id="initialDate" name="initialDate">
                             <span style="margin: 0 5px" class="d-flex align-items-center">à</span>
                             <input type="date" class="form-control" id="finalDate" name="finalDate">
-                        </div>
-                        <label for="birthday">Valor do lançamento:</label>
-                        <div class="input-group mb-3">
-                            <select class="form-select me-1" aria-label="Valor de lançamento">
-                                <option value="igual">Igual à</option>
-                                <option value="maior_igual">Maior ou igual à</option>
-                                <option value="menor_igual">Menor ou igual à</option>
-                            </select>
-                            <span class="input-group-text" style="border-left-width: 1px !important">R$</span>
-                            <input type="text" class="form-control" id="amount" placeholder="0,00">
                         </div>
 
                     </div>
@@ -106,96 +91,6 @@
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
                         id="cancel-filter">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="apply-filter">Filtrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-transacoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nova Transação
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
-                        </svg>
-
-                    </h5>
-                    <button type="button" id="closeAddExpenseModal" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close" (click)="closeClick()">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row p-2">
-                        <div class="col-md-4">
-                            <div class="form-floating mb-2">
-                                <input type="text" class="form-control" id="inputConta" placeholder="Conta">
-                                <label for="inputConta">Nro Conta</label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-floating mb-2">
-                                <input type="text" class="form-control" id="inputContaD" placeholder="Conta de destino">
-                                <label for="inputContaD">Nro Conta de destino</label>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="form-floating mb-2">
-                                <input type="text" class="form-control" id="inputLoginD" placeholder="Login de destino">
-                                <label for="inputLoginD">Login de destino</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row p-2">
-                        <div class="col-md-4">
-                            <div class="form-floating mb-2">
-                                <input type="date" class="form-control" id="inputData">
-                                <label for="inputData">Data</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md">
-                            <div class="form-floating mb-2">
-                                <select class="form-select" id="floatingSelectGrid"
-                                    aria-label="Floating label select example">
-                                    <option value="R">Crédito</option>
-                                    <option value="D">Débito</option>
-                                    <option value="TU">Transf. usúarios</option>
-                                    <option value="TC">Transf. contas</option>
-                                </select>
-                                <label for="floatingSelectGrid">Tipo movimento</label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-floating mb-2">
-                                <input type="text" class="form-control" id="inputValor" placeholder="Valor">
-                                <label for="inputData">Valor R$</label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row p-2">
-                        <div class="col-md">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Descrição" id="floatingTextarea"></textarea>
-                                <label for="floatingTextarea">Descrição</label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" id="btn-close" class="btn btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" id="btn-save" class="btn btn btn-primary"
-                        data-bs-dismiss="modal">Confirmar</button>
                 </div>
             </div>
         </div>
