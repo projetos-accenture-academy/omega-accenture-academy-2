@@ -114,6 +114,9 @@ const init = async () => {
         const {contaBanco: contaBancoDash, contaCredito: contaCreditoDash} = accounts
 
         viewContas.innerHTML =  viewAccountItem(contaBancoDash, 'Conta Banco') + viewAccountItem(contaCreditoDash, 'Conta Corrent')
+
+        fazerTransferencia();
+
     } else {
         viewContas.innerHTML =  `<di class="error-dash">Não foi possível obter os dados do dashboard, por favor tente novamente.</div>`;
     }

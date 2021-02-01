@@ -1,29 +1,3 @@
-const setDashboardData = async () => {
-
-    const userData = JSON.parse(localStorage.getItem(userDataCollection));
-    const { usuario, token } = await userData;
-    let error = false;
-
-    await axios
-        .get(`${baseURL}dashboard?fim=2021-01-31&inicio=2021-01-01&login=${usuario.login}`, {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": token
-            }
-        })
-        .then(
-            res => {
-                localStorage.setItem(userAccountStatements, JSON.stringify(res.data))
-            })
-        .catch(err => {
-            console.log('Erro ao atualizar os dados locais vindos do servidor')
-            error = true;
-            localStorage.removeItem(userAccountStatements)
-        })
-
-    return error;
-}
-
 const modalTransacoes = (`
 <button class="btn btn-danger me-md-2" type="button" data-bs-toggle="modal"
 data-bs-target="#modal-transacoes">
@@ -119,8 +93,9 @@ Transferir <i class="ms-3 far fa-share-square"></i>
 </div>
 </div> `);
 
-const init = async () => {
-    await setDashboardData();
+const fazerTransferencia = async () => {
+    
+document.getElementById('modal-transacoes').innerHTML="";
 
     document.getElementById('btn-save').addEventListener('click', function () {
         let conta = document.getElementById('inputConta').value,
@@ -160,5 +135,5 @@ const init = async () => {
     });
 }
 
-init()
+fazerTransferencia()
 
