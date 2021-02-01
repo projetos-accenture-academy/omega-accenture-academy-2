@@ -12,6 +12,16 @@ Tecnologias utilizadas:
 -   [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
 -   [BOOTSTRAP](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
+### 🛠 Como executar localmente
+
+-   Baixe ou clone o repositório
+-   Abra o diretório raiz do repositório com o terminal, e execute:
+
+``` 
+    npm i
+    npm start
+```
+
 ### 🔗 Acesse em
 
 -   <a href="https://omega-accenture-academy-2.netlify.app/" target="_blank">Ômega Bank</a>
