@@ -75,8 +75,8 @@ const viewAccountItem = (conta, label) => {
             <div id="collapse151" class="accordion-collapse collapse show" aria-labelledby="heading151"
                 data-bs-parent="#accordion">
                 <div class="accordion-body accordion-conta">
-                    ${conta.lancamentos.length > 0 ?
-                        `<div class="container mb-2 p-2">
+                    
+                        <div class="container mb-2 p-2">
                             <div class="container p-0 mt-2 d-grid gap-2 d-md-flex justify-content-md-between">
                                 <div class="d-flex align-items-center">
                                     <h6 id="filter-label">Extrato do mês atual</h6>
@@ -88,8 +88,7 @@ const viewAccountItem = (conta, label) => {
                             </div>
                         </div>
                         <div class="container lancamentos">
-                        ` 
-                        +  conta.lancamentos.map(info => {
+                        ${conta.lancamentos.length > 0 ? conta.lancamentos.map(info => {
                                 return `
                                     <div class="row justify-content-between">
                                         <div class="col-3">${info.data}</div>
